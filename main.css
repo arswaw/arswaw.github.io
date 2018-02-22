@@ -3,30 +3,52 @@
 html {
     font-family: 'Raleway', sans-serif;
     text-align: center;
-
-}
-
-body {
-    margin: 0;
-}
-
-ul {
-    list-style-type: none;
-    margin-right: 1.95%;
 }
 
 a {
     text-decoration: none;
 }
 
-.extra-padding {
-    padding: 30px;
+.item {
+    border: 1px solid lightblue;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .item a {
+    color: lightseagreen;
+  }
+
+  .item:hover {
+      background-color: gainsboro;
+  }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(6, auto);
+  grid-auto-rows: 50px;
+  grid-auto-columns: 45px;
+  grid-gap: 5px;
 }
 
 .container {
-    top: 30%;
+    top: 5%;
     position: absolute;
-    left: 0;
+    left: 25%;
     right: 0;
     bottom: 0;
+    max-width: 50%;
+}
+
+@media (max-width: 500px) and (orientation : portrait) {
+    .grid-container {
+        grid-template-columns: repeat(2, auto);
+    }
+    .container {
+        top: 1%;
+        left: 20%;
+        max-width: 60%;
+    }
 }
